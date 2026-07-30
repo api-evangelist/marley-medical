@@ -1,7 +1,28 @@
 aid: marley-medical
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/marley-medical.png
 name: Marley Medical
-description: Marley Medical is a company surfaced as a portfolio company of a16z and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Marley Medical is a venture-backed (Andreessen Horowitz / a16z) digital health
+  company that delivers virtual, membership-based medical care to patients directly
+  through a consumer web and mobile experience. Its patient-facing product runs as a
+  web application (member portal at my.marleymedical.com) backed by Google Firebase,
+  fronted by a Webflow marketing site and signup funnel, with member support delivered
+  through Zendesk and transactional email via Mailgun on Google Workspace. As of this
+  enrichment pass Marley Medical operates as a direct-to-consumer telehealth service and
+  does not publish a public developer API, OpenAPI definition, SDKs, or developer portal;
+  this profile captures its verified public web and email infrastructure and its
+  domain-security posture.
 url: https://raw.githubusercontent.com/api-evangelist/marley-medical/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +32,34 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Health
+- Healthcare
+- Telehealth
+- Digital Health
+- Virtual Care
+- Medical
 apis: []
+common:
+- type: Website
+  url: https://www.marleymedical.com
+- type: SignUp
+  url: https://join.marleymedical.com/
+- type: Login
+  url: https://my.marleymedical.com/
+- type: Support
+  url: https://marleymedical.zendesk.com/hc/en-us
+- type: DomainSecurity
+  url: security/marley-medical-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
