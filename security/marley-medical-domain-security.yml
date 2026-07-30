@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS probes of apis.yml website + email hosts (July 2026)
+notes: >-
+  Marley Medical's public web endpoints (Webflow marketing/signup and a Netlify-hosted
+  patient portal) rejected the TLS ClientHello from every non-browser probe client
+  (OpenSSL, LibreSSL, and Python), so HTTPS reachability and HSTS could not be observed
+  programmatically; the sites do serve to real browsers. DNS-layer records below were
+  resolved successfully with dig.
+hosts:
+- host: www.marleymedical.com
+  platform: webflow
+  https: false
+  tls_note: TLS handshake failure (server rejected ClientHello from probe clients)
+- host: marleymedical.com
+  platform: netlify
+  https: false
+  tls_note: apex record (75.2.70.75) returned TLS internal_error alert to probe clients
+- host: my.marleymedical.com
+  platform: netlify
+  https: false
+  tls_note: patient portal; TLS handshake failure from probe clients
+domains:
+- domain: marleymedical.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
